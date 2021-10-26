@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.navBar {
+  background-color: #282c34;
+}
+.title {
+  color: whitesmoke;
+  font-style: bold;
+}
+
+.subTitle { 
+  color: rgba(245, 245, 245, 0.781);
+  font-style: italic;
+}
