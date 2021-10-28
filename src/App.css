@@ -48,3 +48,13 @@
   color: rgba(245, 245, 245, 0.781);
   font-style: italic;
 }
+
+.carrito {
+  font-size: 35px;
+  color: rgb(109, 143, 255);
+}
+
+.greeting {
+  font-size: 35px;
+  color: sienna;
+}

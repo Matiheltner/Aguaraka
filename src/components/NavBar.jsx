@@ -1,4 +1,5 @@
 import Button from 'react-bootstrap/Button'
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
 
@@ -9,6 +10,7 @@ return (
       <button>Productos</button>
       <button>Técnica</button>
       <button>La Artista</button>
+      <CartWidget/>
     </div>
   );
 }
