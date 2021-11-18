@@ -1,18 +1,27 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
-import './components/ItemCount.css';
+import ItemListContainer from './components/Item/ItemList/ItemListContainer';
+import ItemDetailContainer from './components/Item/ItemDetail/ItemDetailContainer';
+import ItemCount from './components/Item/ItemCount/ItemCount';
+import {BrowserRouter, Routes,Route} from 'react-router-dom'
+
+
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting="¡Bienvenida/o a la tienda oficial de AguaraKa!"/>
-      <ItemCount stock={5} initial={1}/>
+    <NavBar/>
+    <Routes>
+      <Route exact path='/products' element={<ItemListContainer/>}/>
+      <Route exact path= '/detail/:productID' element={<ItemDetailContainer/>}/>
+    </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+//<ItemCount stock={5} initial={1}/>
