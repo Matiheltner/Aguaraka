@@ -22,12 +22,17 @@ const addOn = (quantity) => {
             <div className="card-body">
             <div className='card-header'>{producto[index].descripcion}</div>
             </div>               
-        
-    
         {
-            wasClick ? ( <Link to= "/cart">
+            wasClick ?(
+            <>
+            <Link to="/cart">
             <p>Abrir la Tienda</p>
-            </Link>)
+            </Link>
+            
+            <Link to="/products">
+            <p>Seguir comprando</p>
+            </Link>
+            </> )
             :( 
                 <ItemCount initial= {1} stock={5} addOn={addOn}/>)
             
