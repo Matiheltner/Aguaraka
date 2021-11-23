@@ -1,4 +1,4 @@
- export const Item = ({producto}) => {
+export const Item = ({producto}) => {
     return (
 <div className="card w-25 mt-5" key={producto.id}>
                         <div className="card-header">
@@ -16,3 +16,4 @@
                         </div>
 </div>)
 }
+export default Item;

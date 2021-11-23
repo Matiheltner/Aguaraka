@@ -1,23 +1,38 @@
+import {useState} from 'react'
+import {Link} from 'react-router-dom'
+import ItemCount from '../ItemCount/ItemCount'
+
+
 const ItemDetail =({producto,id}) => {
     
+const [wasClick, setWasClick] = useState(false)
+
+const addOn = (quantity) => {
+    console.log("Compraste " + quantity + " productos.")
+    setWasClick(true);
+};
+
     let index = producto.findIndex(element => element.id === id);
     console.log(index)
     return (
-
-<div className="col-4 m-3 border w-25" data-id={producto.id}>  
-            <div className='card-header'>{producto.nombre}</div>
-            <div className='card-header'>{producto.precio}</div>
-            <div className='card-header'>{producto.descripcion}</div>
         <div className="col-4 m-3 border w-25" data-id={producto[index].id}>  
-            <div className='card-header'>{producto[index].nombre}</div>
-            <div className='card-header'>{producto[index].precio}</div>
-            <div className='card-header'>{producto[index].descripcion}</div>
+            <div className='card-header'>{producto[index].name}</div>
+            <div className='card-header'>{producto[index].price}</div>
+            <img src={`./resources/${producto[index].name}.jpg`} alt='Imagen del Producto' className='w-25' />
             <div className="card-body">
-                <img src={`./resources/${producto.nombre}.jpg`} alt='Imagen del Producto' className='w-25' />
-                <img src={`./resources/${producto[index].nombre}.jpg`} alt='Imagen del Producto' className='w-25' />
+            <div className='card-header'>{producto[index].descripcion}</div>
             </div>               
+        
+    
+        {
+            wasClick ? ( <Link to= "/cart">
+            <p>Abrir la Tienda</p>
+            </Link>)
+            :( 
+                <ItemCount initial= {1} stock={5} addOn={addOn}/>)
+            
+        }     
         </div>
-    </div>      
     )
     }
 

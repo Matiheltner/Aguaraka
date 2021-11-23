@@ -28,30 +28,24 @@ const ItemListContainer = function ({greeting}) {
    <div className="card-columns row">
                     { products.map(prod=> <div key={prod.id} className="card w-25 m-5 col-4 border" >
                                             <div className="card-header">
-                                                {`${prod.nombre} - ${prod.precio}`}
+                                                {`${prod.name} - ${"$" +prod.price}`}
                                             </div>
                                             <div className="card-body">
                                                 <img src={prod.foto} alt='' />
-                                                {prod.precio}
-                                                
+                                                {prod.descripcion}
                                             </div>
                                             <div className="card-footer">
                                                     <Link to={`/detail/${prod.id}`}>
                                                         <button className="btn btn-outline-primary btn-block">
-                                                            detalle del producto
+                                                            Ver detalle del producto
                                                         </button>
                                                     </Link>
-
                                             </div>
-
                                         </div>
                                         )}
 
                 </div>
    }
-   
-   <ItemList productos={products}/>
-
 </>
 )
 }

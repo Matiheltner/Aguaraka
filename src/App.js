@@ -6,7 +6,9 @@ import ItemDetailContainer from './components/Item/ItemDetail/ItemDetailContaine
 import ItemCount from './components/Item/ItemCount/ItemCount';
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 
-
+const Cart = () =>{
+  return (<p>Este es su carrito de compras.</p>)
+}
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
     <Routes>
       <Route exact path='/products' element={<ItemListContainer/>}/>
       <Route exact path= '/detail/:productID' element={<ItemDetailContainer/>}/>
+      <Route exact path='/cart' element={<Cart/>}/>
     </Routes>
     </div>
     </BrowserRouter>
@@ -23,5 +26,3 @@ function App() {
 }
 
 export default App;
-
-//<ItemCount stock={5} initial={1}/>
