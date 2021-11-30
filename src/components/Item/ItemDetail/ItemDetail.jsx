@@ -1,19 +1,25 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import {Link} from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
+import CartContext from '../../Cart/CartContext'
 
 
 const ItemDetail =({producto,id}) => {
     
 const [wasClick, setWasClick] = useState(false)
 
+const { addCarrito, cartList } = useContext(CartContext);
+
 const addOn = (quantity) => {
     console.log("Compraste " + quantity + " productos.")
+    addCarrito({...producto[index], quantity});
     setWasClick(true);
 };
+    console.log(cartList);
 
     let index = producto.findIndex(element => element.id === id);
     console.log(index)
+
     return (
         <div className="col-4 m-3 border w-25" data-id={producto[index].id}>  
             <div className='card-header'>{producto[index].name}</div>
@@ -26,7 +32,7 @@ const addOn = (quantity) => {
             wasClick ?(
             <>
             <Link to="/cart">
-            <p>Abrir la Tienda</p>
+            <p>Ir al carrito</p>
             </Link>
             
             <Link to="/products">

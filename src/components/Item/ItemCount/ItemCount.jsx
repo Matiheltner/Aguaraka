@@ -16,7 +16,7 @@ const ItemCount = ({stock, initial, addOn}) =>{
         }
         else console.log("El monto mínimo es 1");
     };
-    
+
 
     return(
         <>
@@ -29,5 +29,6 @@ const ItemCount = ({stock, initial, addOn}) =>{
         </>
     );
 }
+
 
 export default ItemCount
