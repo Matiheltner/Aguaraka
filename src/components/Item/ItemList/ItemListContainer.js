@@ -1,14 +1,14 @@
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useContext} from 'react'
 import {useParams} from'react-router-dom'
 import {getFirestore} from "../../../services/getFirestore";
-
+import {CartContext} from '../../Cart/CartContext';
 import {Link} from 'react-router-dom'
 
 import ItemList from "./ItemList";
 
 
 const ItemListContainer = function ({greeting}) {
-    const [products,setProducts] = useState ([])
+    const { products, setProducts } = useContext(CartContext);
     const [loading,setLoading] = useState (true)
     const { categoryID } = useParams()
     useEffect(() =>{
@@ -41,7 +41,7 @@ const ItemListContainer = function ({greeting}) {
     { loading ?  <span className="visually-hidden">Loading...</span>
    : 
    <div className="card-columns row">
-                    { products.map(prod=> <div key={prod.id} className="card w-25 m-5 col-4 border d-flex row justify-content-center" >
+                    { products.map(prod=> <div key={prod.id} className="card w-25 m-5 col-4 border d-flex row" >
                                             <div className="card-header">
                                                 {`${prod.name} - ${"$" +prod.price}`}
                                             </div>
