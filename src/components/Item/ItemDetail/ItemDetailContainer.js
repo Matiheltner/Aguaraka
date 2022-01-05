@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import getFetch from "../../../services/getFetch";
+import {getFirestore} from "../../../services/getFirestore";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer =  () => {
@@ -8,18 +8,6 @@ const ItemDetailContainer =  () => {
     const [loading, setLoading] = useState (true)
 
     const {productID} = useParams ()
-
-    useEffect(() => {
-        getFetch
-        .then(res => {
-        setProducts(res)
-})
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-
-        let index = products.findIndex(element => element.id === productID);
-        console.log(index)
-})
 
     return(
 <>

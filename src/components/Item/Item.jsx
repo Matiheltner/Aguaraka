@@ -5,7 +5,7 @@ export const Item = ({producto}) => {
                             {`${producto.name}`}
                         </div>
                         <div className="card-body">
-                            <img src={`./Imagen/${producto.foto}.png`} alt="Artesania de gres" />
+                            <img src={producto.imagen} alt="Artesania de gres" />
                             {producto.price}
                         </div>
                         <div className="card-footer">
