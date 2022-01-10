@@ -2,7 +2,7 @@
 
 Proyecto de un e-commerce ficticio realizado con ReactJS como desafío final de [Coderhouse](https://www.coderhouse.com/).
 
-[DEPLOYMENT](https://desafio-2-react-alvarez.vercel.app/)
+[DEPLOYMENT](https://aguaraka.netlify.app/)
 
 ¿De que se trata Aguaraka?
 
@@ -36,4 +36,5 @@ Ir a localhost:3000/
 
 # Screenshot del proyecto
 
-![Gif E-commerce](https://user-images.githubusercontent.com/88116420/148002100-b79e98c7-4857-4092-a4fe-0d6fceeb32ae.gif)
+[aguaraka1](https://user-images.githubusercontent.com/87765763/148708868-498fe2db-8816-48de-9a97-324b2a003754.gif)
+)
