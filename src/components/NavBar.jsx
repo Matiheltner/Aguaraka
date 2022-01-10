@@ -68,12 +68,16 @@ const NavBar = () => {
   <Dropdown>
   <Dropdown.Toggle variant="primary" id="dropdown-basic">Catalogo</Dropdown.Toggle>
     <Dropdown.Menu>
+      <div>
     <Link to ="/categoria/Ceramica">
-      <Dropdown.Item href="#/action-1">Ceramica</Dropdown.Item>
+      <p className="btn btn-primary">Ceramica</p>
       </Link>
+      </div>
+      <div>
       <Link to ="/categoria/Gres">
-      <Dropdown.Item href="#/action-2">Gres</Dropdown.Item>
+      <p className="btn btn-primary">Gres</p>
       </Link>
+      </div>
     </Dropdown.Menu>
 </Dropdown>
   <Link to ="/Tecnica">
