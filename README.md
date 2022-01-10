@@ -37,4 +37,3 @@ Ir a localhost:3000/
 # Screenshot del proyecto
 
 [aguaraka1](https://user-images.githubusercontent.com/87765763/148708868-498fe2db-8816-48de-9a97-324b2a003754.gif)
-)
