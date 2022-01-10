@@ -1,19 +1,30 @@
-export const Item = ({producto}) => {
-    return (
-<div className="card w-25 mt-5" key={producto.id}>
-                        <div className="card-header">
-                            {`${producto.name}`}
-                        </div>
-                        <div className="card-body">
-                            <img src={producto.imagen} alt="Artesania de gres" />
-                            {producto.price}
-                        </div>
-                        <div className="card-footer">
+import { Link } from "react-router-dom"
 
-                            <button className="btn btn-outline-primary btn-block">
+const Item = ({product}) => {
 
-                            </button>
-                        </div>
-</div>)
+    return (     
+        <div key={product.id} className="card w-25 m-5 col-4 border" >
+            <div className="card-header">
+                {`${product.name}`}
+            </div>
+            <div className="card-body">
+                <img src={product.imagen} alt={`${product.name}`} className="w-100"/>
+                <div>
+                {`${product.description}`}
+                </div>
+                {`$ ${product.price}`}
+            </div>
+            <div className="card-footer">
+                    <Link to={`/detail/${product.id}`}>
+                        <button className="btn btn-outline-primary btn-block">
+                            detalle del producto
+                        </button>
+                    </Link>
+
+            </div>
+
+        </div>  
+    )
 }
-export default Item;
+
+export default Item

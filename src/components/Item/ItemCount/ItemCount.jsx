@@ -8,13 +8,13 @@ const ItemCount = ({stock, initial, addOn}) =>{
         if(amount < stock){
             setAmount(amount+1);
         }
-        else console.log("No hay stock suficiente");
+        
     };
     const removeItem = () =>{
         if(amount > 1){
             setAmount(amount-1);
         }
-        else console.log("El monto mínimo es 1");
+        
     };
 
 

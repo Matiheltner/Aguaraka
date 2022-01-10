@@ -1,12 +1,9 @@
-import {useState, useEffect,useContext} from 'react';
+import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import {getFirestore} from "../../../services/getFirestore";
 import ItemDetail from "./ItemDetail";
-import {CartContext} from '../../Cart/CartContext';
 
 const ItemDetailContainer =  () => {
     const [loading, setLoading] = useState (true);
-    const {products} = useContext(CartContext);
     const {productID} = useParams();
 
     useEffect(() =>{

@@ -1,11 +1,14 @@
+import { useCarritoContext } from "./CartContext";
 const CartItem = ({product}) =>{
-
+    const { removeItemCart } = useCarritoContext();
 
     return(
         <>
-            <p>Elegiste {product.name}</p>
-            <p>Por un valor de ${product.price}</p>
-            <p>¡Seleccionaste {product.quantity} piezas de barro!</p>
+            <p className="title">Elegiste {product.name}</p>
+            <img src={product.imagen} alt='Imagen del Producto' className='w-25' />
+            <p className="quien">Por un valor de ${product.price}</p>
+            <p className="quien">¡Seleccionaste {product.quantity} piezas de barro!</p>
+            <button type="button" onClick={ () => removeItemCart(product.id)}>Eliminar este articulo</button>
         </>
     );
 }

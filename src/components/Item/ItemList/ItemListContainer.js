@@ -2,7 +2,6 @@ import {useState,useEffect,useContext} from 'react'
 import {useParams} from'react-router-dom'
 import {getFirestore} from "../../../services/getFirestore";
 import {CartContext} from '../../Cart/CartContext';
-import {Link} from 'react-router-dom'
 
 import ItemList from "./ItemList";
 
@@ -36,32 +35,18 @@ const ItemListContainer = function ({greeting}) {
 
     return (
 <>
-        <h1 className="greeting">{greeting}</h1>
-    
-    { loading ?  <span className="visually-hidden">Loading...</span>
-   : 
-   <div className="card-columns row">
-                    { products.map(prod=> <div key={prod.id} className="card w-25 m-5 col-4 border d-flex row" >
-                                            <div className="card-header">
-                                                {`${prod.name} - ${"$" +prod.price}`}
-                                            </div>
-                                            <div className="card-body d-flex flex-column">
-                                                <img src={prod.imagen} alt='' style={{maxWidth:"300px",maxHeight:"300px"}}/>
-                                                {prod.description}
-                                            </div>
-                                            <div className="card-footer">
-                                                    <Link to={`/detail/${prod.id}`}>
-                                                        <button className="btn btn-outline-primary btn-block">
-                                                            Ver detalle del producto
-                                                        </button>
-                                                    </Link>
-                                            </div>
-                                        </div>
-                                        )}
+            <h1 style={{backgroundColor: "grey", color: "white" }}>{greeting}</h1>
+
+            { loading ?    <span className="visually-hidden">Loading...</span>
+
+                    :
+                <div className="card-columns row">
+                    <ItemList products={products}></ItemList>
 
                 </div>
-   }
-</>
+            }
+
+        </>
 )
 }
 export default ItemListContainer;
